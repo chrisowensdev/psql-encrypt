@@ -7,6 +7,6 @@ const pgp = require('pg-promise')({
     },
 });
 
-const db = pgp(process.env.DATABASE_URL);
+const db = pgp(process.env.HEROKU_POSTGRESQL_CHARCOAL_URL);
 
 module.exports = db;
