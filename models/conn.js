@@ -7,6 +7,10 @@ const pgp = require('pg-promise')({
     },
 });
 
-const db = pgp(process.env.HEROKU_POSTGRESQL_CHARCOAL_URL);
+const cn = {
+    connectionString: process.env.HEROKU_POSTGRESQL_CHARCOAL_URL,
+    ssl: { rejectUnathorized: false },
+};
+const db = pgp(cn);
 
 module.exports = db;
