@@ -21,6 +21,8 @@ server.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}`);
 });
 
+const rootController = require('./routes/root');
 const demoController = require('./routes/demo');
 
+app.use('/', rootController);
 app.use('/demo', demoController);
