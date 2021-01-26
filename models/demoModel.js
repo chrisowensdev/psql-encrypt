@@ -46,7 +46,7 @@ class UsersList {
     static async getEncrypted(email) {
         try {
             const response = await db.one(
-                `SELECT id, username, email, password, rider_name FROM demo WHERE email = $1;`,
+                `SELECT id, username, email, password, rider_name, medical_info FROM demo WHERE email = $1;`,
                 [email]
             );
             return response;

@@ -36,12 +36,7 @@ router.get('/encrypted', async (req, res) => {
     const { email } = req.body;
     const user = await usersList.getEncrypted(email);
     console.log(user);
-    res.json({
-        parentOne: {
-            firstName: user.username,
-        },
-        password: user.password,
-    });
+    res.json(user);
 });
 
 router.get('/decrypted', async (req, res) => {
