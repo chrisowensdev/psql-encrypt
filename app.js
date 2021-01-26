@@ -2,7 +2,6 @@
 
 const http = require('http');
 
-const hostname = '127.0.0.1';
 const port = process.env.PORT || 3333;
 
 const express = require('express');
@@ -22,7 +21,10 @@ server.listen(port, () => {
 });
 
 const rootController = require('./routes/root');
+const usersController = require('./routes/users');
 const demoController = require('./routes/demo');
 
 app.use('/', rootController);
+app.use('/users', usersController);
+
 app.use('/demo', demoController);
