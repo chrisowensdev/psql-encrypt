@@ -5,9 +5,7 @@ const db = require('../models/conn');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    res.json({
-        msg: 'Ok',
-    });
+    res.send('OK');
 });
 
 module.exports = router;
