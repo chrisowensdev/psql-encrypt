@@ -24,8 +24,5 @@ server.listen(port, () => {
 const rootController = require('./routes/root');
 const demoController = require('./routes/demo');
 
-app.get('/', (req, res) => {
-    res.send('OK');
-});
-// app.use('/', rootController);
-// app.use('/demo', demoController);
+app.use('/', rootController);
+app.use('/demo', demoController);
